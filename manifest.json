@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Copy to Sheet",
+  "version": "1.0",
+  "permissions": ["contextMenus", "notifications", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
