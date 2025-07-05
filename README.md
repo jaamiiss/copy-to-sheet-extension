@@ -3,13 +3,13 @@ Copy text from any website and quickly save it to your Google Sheet.
 
 This Chrome Extension lets you:
 
-✅ Select text and save it as a title or a message using a right-click context menu
-✅ View and edit the captured text in a floating draggable panel
-✅ Submit your text to a linked Google Sheet (via Google Apps Script)
-✅ Get instant confirmation with a panel message and Chrome notifications
+✅ Select text and save it as a title or a message using a right-click context menu <br>
+✅ View and edit the captured text in a floating, draggable panel <br>
+✅ Submit your text to a linked Google Sheet (via Google Apps Script) <br>
+✅ Get instant confirmation with a panel message and Chrome notifications <br>
 
 ### 🚀 Features
-Save selected text as title or message from the context menu
+Save selected text as a title or message from the context menu
 
 Show a floating panel with saved content
 
@@ -71,11 +71,11 @@ function doPost(e) {
 ```
 
 ### 🖥️ How to Use
-✅ Highlight any text on a web page
-✅ Right-click → Save as Title or Save as Message
-✅ Use Send Title + Message to Sheet from the context menu, or open the Floating Panel
-✅ From the floating panel, press Submit to send the data
-✅ See confirmation message directly in the panel
+✅ Highlight any text on a web page <br>
+✅ Right-click → Save as Title or Save as Message <br>
+✅ Use Send Title + Message to Sheet from the context menu, or open the Floating Panel <br>
+✅ From the floating panel, press Submit to send the data <br>
+✅ See confirmation message directly in the panel <br>
 
 ### 🪄 Technologies
 JavaScript (Vanilla)
@@ -87,7 +87,9 @@ Google Apps Script
 Google Sheets
 
 ### 🎨 Screenshots
-
+![screenshot](https://i.imgur.com/bxzn0nN.png)
+![screenshot](https://i.imgur.com/7lqtYNB.png)
+![screenshot](https://i.imgur.com/9JP5jz9.png)
 
 ### 🛠️ Development
 Open ```background.js``` and set your ```WEBAPP_URL```
