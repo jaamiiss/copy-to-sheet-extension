@@ -87,9 +87,9 @@ Google Apps Script
 Google Sheets
 
 ### 🎨 Screenshots
-![screenshot](https://i.imgur.com/bxzn0nN.png)
-![screenshot](https://i.imgur.com/7lqtYNB.png)
-![screenshot](https://i.imgur.com/9JP5jz9.png)
+![screenshot](https://i.imgur.com/tpYpmZJ.png)
+![screenshot](https://i.imgur.com/rzmNqUN.png)
+![screenshot](https://i.imgur.com/Erijn2R.png)
 
 ### 🛠️ Development
 Open ```background.js``` and set your ```WEBAPP_URL```

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copy to Sheet - Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <span><img src="icons/icon128.png" alt="Copy to Sheet Logo" style="width: 64px; height: 64px; margin-bottom: 1rem;" /></span>
+  <h1>Copy to Sheet – Options</h1>
+
+  <label for="allowedDomains">Allowed Domains (comma separated)</label>
+  <textarea id="allowedDomains" placeholder="e.g. example.com, micropreneur.life"></textarea>
+
+  <label for="autoPopulate">
+    <input type="checkbox" id="autoPopulate" />
+    Enable Auto-Populate (auto crawl content)
+  </label>
+
+  <label for="strictInjection">
+    <input type="checkbox" id="strictInjection" />
+    Only inject panel on allowed domains (strict mode)
+  </label>
+
+  <label for="debugMode" style="margin-top: 1.5rem;">
+    <input type="checkbox" id="debugMode" />
+    Enable Debug Mode (show blocked panel banner)
+  </label>
+
+  <button id="toggleMappingsBtn">🔧 Configure Field Mappings</button>
+
+  <div id="fieldMappingsContainer" style="display: none;">
+    <h2>Field Mappings per Domain</h2>
+    <small style="color: var(--cts-muted); display: block; margin-bottom: 0.75rem;">
+      Choose a domain and define selectors to extract content.
+    </small>
+
+    <div id="manualMappingForm">
+      <select id="newDomain">
+        <option value="">Select domain</option>
+      </select>
+      <input type="text" id="newTitleSelector" placeholder="Title selector (e.g. h1)" />
+      <input type="text" id="newMessageSelector" placeholder="Message selector (e.g. blockquote)" />
+      <button id="inlineAddBtn">➕ Add Mapping</button>
+    </div>
+
+    <button id="addMappingBtn">Use Prompt to Add Mapping</button>
+    <div id="mappingList"></div>
+  </div>
+
+  <button id="saveBtn">💾 Save Settings</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

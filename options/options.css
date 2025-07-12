@@ -1,0 +1,171 @@
+:root {
+  --cts-font: system-ui, sans-serif;
+
+  --cts-bg: #ffffff;
+  --cts-text: #000000;
+  --cts-accent: #007bff;
+  --cts-accent-hover: #0056b3;
+  --cts-border: #ccc;
+  --cts-success: green;
+  --cts-muted: #888;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cts-bg: #1e1e1e;
+    --cts-text: #ffffff;
+    --cts-accent: #3399ff;
+    --cts-accent-hover: #1177dd;
+    --cts-border: #555;
+    --cts-success: #90ee90;
+    --cts-muted: #aaa;
+  }
+}
+
+body {
+  background-color: var(--cts-bg);
+  color: var(--cts-text);
+  font-family: var(--cts-font);
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 0.5rem;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: var(--cts-bg);
+  color: var(--cts-text);
+  border: 1px solid var(--cts-border);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  margin: 0.25rem 0 1rem;
+  border: 1px solid var(--cts-border);
+  border-radius: 4px;
+  background-color: var(--cts-bg);
+  color: var(--cts-text);
+  box-sizing: border-box;
+}
+
+select {
+  font-weight: bold;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cts-accent);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+button:hover {
+  background-color: var(--cts-accent-hover);
+}
+
+#saveBtn {
+  width: 100%;
+}
+
+#status {
+  margin-top: 12px;
+  font-style: italic;
+  color: var(--cts-success);
+  min-height: 20px;
+}
+
+#fieldMappingsContainer {
+  margin-top: 2rem;
+}
+
+#manualMappingForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--cts-border);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+#manualMappingForm button {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+#addMappingBtn {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.mapping-item {
+  background: var(--cts-bg);
+  border: 1px solid var(--cts-border);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.mapping-item strong {
+  font-size: 16px;
+  color: var(--cts-accent);
+}
+
+.mapping-item button {
+  background: crimson;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.mapping-item button:hover {
+  background: darkred;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--cts-border);
+  margin: 1rem 0;
+}
+
+::placeholder {
+  color: var(--cts-muted);
+}

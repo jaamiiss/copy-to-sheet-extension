@@ -1,8 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Copy to Sheet",
-  "version": "1.0",
-  "permissions": ["contextMenus", "notifications", "activeTab", "scripting"],
+  "version": "2.0",
+  "description": "Extract and send content to a Google Sheet.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
   "background": {
     "service_worker": "background.js"
   },
@@ -10,7 +20,11 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["styles/style.css"]
     }
-  ]
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
 }
