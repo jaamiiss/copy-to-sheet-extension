@@ -22,6 +22,27 @@ function showBlockedBanner() {
   setTimeout(() => banner.remove(), 4000);
 }
 
+function extractDateFromText(text) {
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const monthRegex = new RegExp(`\\b(${monthNames.join("|")})\\b`, "i");
+  const dayRegex = /\b(\d{1,2})(st|nd|rd|th)?\b/;
+
+  const monthMatch = text.match(monthRegex);
+  const dayMatch = text.match(dayRegex);
+
+  if (monthMatch && dayMatch) {
+    const monthName = monthMatch[1];
+    const month = String(monthNames.indexOf(monthName) + 1).padStart(2, "0");
+    const day = String(parseInt(dayMatch[1]));
+    return { month, day };
+  }
+
+  return null;
+}
+
 function createMonthSelect() {
   const monthNames = Array.from({ length: 12 }, (_, i) =>
     new Intl.DateTimeFormat(navigator.language || "en", { month: "long" }).format(new Date(2020, i))
@@ -299,6 +320,30 @@ function extractContent() {
       panelMsgEl.textContent = message;
     }
 
+    const container = document.querySelector(".gh-content") || document.body;
+    const dateMatch = extractDateFromText(container.innerText);
+
+    const monthDropdown = document.getElementById("cts-month");
+    const dayInput = document.getElementById("cts-day");
+
+    const currentDay = dayInput?.value?.trim();
+    const currentMonth = monthDropdown?.value?.trim();
+
+    if (
+      dateMatch &&
+      (!overrideState.date || (!currentDay && !currentMonth))
+    ) {
+      const { month, day } = dateMatch;
+
+      if (monthDropdown && dayInput) {
+        monthDropdown.value = month;
+        dayInput.value = day;
+        overrideState.date = true;
+        localStorage.setItem("overrideState", JSON.stringify(overrideState));
+        console.log(`📅 Auto-filled date: ${month}-${day}`);
+      }
+    }
+    
     if (panel) panel.style.display = "block";
     console.log("🖼️ Panel auto-filled from auto-populate.");
   }, 1000);
